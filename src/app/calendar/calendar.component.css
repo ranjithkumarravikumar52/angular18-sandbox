@@ -1,0 +1,30 @@
+.calendar {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .days {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .days div {
+    width: calc(100% / 7);
+    border: 1px solid #ccc;
+    margin: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
