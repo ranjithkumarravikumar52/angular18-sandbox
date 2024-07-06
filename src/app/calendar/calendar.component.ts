@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-calendar',
   standalone: true,
@@ -44,5 +43,4 @@ export class CalendarComponent implements OnInit {
   private generateDays(): string[] {
     return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   }
-
 }
