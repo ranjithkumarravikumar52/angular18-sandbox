@@ -1,5 +1,5 @@
 .calendar {
-  width: 300px;
+  width: 600px;
   margin: auto;
   text-align: center;
   border: 1px solid #ccc;
@@ -18,7 +18,7 @@
 .days {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .days div {
