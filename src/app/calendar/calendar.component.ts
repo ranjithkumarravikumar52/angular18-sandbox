@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css'
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent {
   month: string;
   year: string;
   days: string[];
@@ -21,8 +21,6 @@ export class CalendarComponent implements OnInit {
     this.year = this.currentDate.getFullYear().toString();
     this.days = this.generateDays();
   }
-
-  ngOnInit(): void {}
 
   previousMonth(): void {
     this.currentDate.setMonth(this.currentDate.getMonth() - 1);
