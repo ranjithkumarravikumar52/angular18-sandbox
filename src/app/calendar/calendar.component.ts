@@ -77,7 +77,6 @@ export class CalendarComponent {
       dates.push(-1);
     }
 
-
     // 2. fill out the current month days
     // where days order are ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     // get total days of the current month = (last day of month - current day of month)
@@ -100,10 +99,9 @@ export class CalendarComponent {
       dates.push(i);
     }
 
-
     // 3. fill out the end of the current month dates coming from next month
     console.log(`lastDayOfCurrentMonthInNumber: ${lastDayOfCurrentMonthInNumber}`);
-    for (let i = lastDayOfCurrentMonthInNumber + 1; i < 7; i++ ) {
+    for (let i = lastDayOfCurrentMonthInNumber + 1; i < 7; i++) {
       dates.push(-2);
     }
 
