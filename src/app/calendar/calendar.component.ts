@@ -56,7 +56,7 @@ export class CalendarComponent {
     // so total days in a calendar grid for any month is 42
 
     // initial data
-    const currentDate = new Date();
+    const currentDate = this.currentDate;
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth(); // FYI - month seems 0-based
     const currentDateInNumber = currentDate.getDate();
@@ -66,11 +66,11 @@ export class CalendarComponent {
     const firstDayOfCurrentMonth = firstDateofCurrentMonth.getDay();
 
     // debug
-    console.log('year: ', currentYear);
-    console.log('month: ', currentMonth);
-    console.log('date: ', currentDateInNumber);
-    console.log('day: ', currentDayInNumber);
-    console.log('firstDayOfMonth: ', firstDayOfCurrentMonth);
+    console.log('currentYear: ', currentYear);
+    console.log('currentMonth: ', currentMonth);
+    console.log('currentDateInNumber: ', currentDateInNumber);
+    console.log('currentDayInNumber: ', currentDayInNumber);
+    console.log('firstDayOfCurrentMonth: ', firstDayOfCurrentMonth);
 
     // 1. first prefill the previous month in current month view with 0 (to avoid complex index management)
     for (let datesArrIndex = 0; datesArrIndex < firstDayOfCurrentMonth; datesArrIndex++) {
