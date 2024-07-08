@@ -88,8 +88,12 @@ export class CalendarComponent {
     }
 
     // 3. fill out the end of the current month dates coming from next month
+    // 7 limit condition here is for end of the week (0 - based)
+    let count = 1;
     for (let i = lastDayOfCurrentMonthInNumber + 1; i < 7; i++) {
-      dates.push(-2);
+      const delta = lastDayOfCurrentMonth.getTime() + (oneDayInMs * (count++))
+      const nextDate: Date = new Date(delta);
+      dates.push(nextDate.getDate());
     }
 
     return dates;
