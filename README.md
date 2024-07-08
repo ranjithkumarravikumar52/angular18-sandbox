@@ -42,6 +42,6 @@ feature
 
 enhancements
 
-- [ ] update `generateDays()`, to use type declaration from ts
-- [ ] clean up comments in `generateDays()`
-- [ ] refactor the `generateDays()`
+- [x] update `generateDays()`, to use type declaration from ts
+- [x] clean up comments in `generateDays()`
+- [x] refactor the `generateDays()`
