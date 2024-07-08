@@ -37,7 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 feature
 
 - [x] calendar should be dynamic and work for any month/year
-- [ ] fill the days of previous month in the current month's view if any
+- [x] fill the days of previous month in the current month's view if any
 - [ ] fill the days of next month in the current month's view if any
 
 enhancements

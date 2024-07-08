@@ -57,41 +57,30 @@ export class CalendarComponent {
     const currentDate: Date = this.currentDate;
     const currentYear: number = currentDate.getFullYear();
     const currentMonth: number = currentDate.getMonth(); // FYI - month is 0-based
-    const currentDateNumber: number = currentDate.getDate();
-    const currentDayNumber: number = currentDate.getDay();
+    const oneDayInMs: number = 24 * 60 * 60 * 1000;
 
     // date constructor format = new Date(year, month, date)
     const firstDateofCurrentMonth: Date = new Date(currentYear, currentMonth, 1);
     const firstDayOfCurrentMonth: number = firstDateofCurrentMonth.getDay();
 
-    // debug
-    console.log('currentYear: ', currentYear);
-    console.log('currentMonth: ', currentMonth);
-    console.log('currentDateInNumber: ', currentDateNumber);
-    console.log('currentDayInNumber: ', currentDayNumber);
-    console.log('firstDayOfCurrentMonth: ', firstDayOfCurrentMonth);
-
-    // 1. first prefill the previous month in current month view with 0 (to avoid complex index management)
+    // 1. prefill the previous month in current month view (to avoid complex index management)
     for (let datesArrIndex = 0; datesArrIndex < firstDayOfCurrentMonth; datesArrIndex++) {
-      dates.push(-1);
+      const delta = firstDateofCurrentMonth.getTime() - oneDayInMs * (firstDayOfCurrentMonth - datesArrIndex);
+      const prevDate: Date = new Date(delta);
+      dates.push(prevDate.getDate());
     }
 
     // 2. fill out the current month days
-    // where days order are ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    // get total days of the current month = (last day of month - current day of month)
     // Subtract one day to get the last day of the current month in ms
     const firstDayOfNextMonth: Date = new Date(currentYear, currentMonth + 1, 1);
-    const oneDayInMs: number = 24 * 60 * 60 * 1000;
     const lastDayOfCurrentMonth: Date = new Date(firstDayOfNextMonth.getTime() - oneDayInMs);
     const lastDayOfCurrentMonthInNumber: number = lastDayOfCurrentMonth.getDay();
 
     // last date in current month
     const totalDaysInCurrentMonth: number = lastDayOfCurrentMonth.getDate();
-    console.log('totalDaysInCurrentMonth: ', totalDaysInCurrentMonth);
 
     // total dates in current month
     const totalDatesInCurrentMonth: number = totalDaysInCurrentMonth - firstDateofCurrentMonth.getDate() + 1;
-    console.log(`Total dates in current month: ${currentMonth} is ${totalDatesInCurrentMonth}`);
 
     // loop through the array and fill out current month days
     for (let i = 1; i <= totalDatesInCurrentMonth; i++) {
@@ -99,7 +88,6 @@ export class CalendarComponent {
     }
 
     // 3. fill out the end of the current month dates coming from next month
-    console.log(`lastDayOfCurrentMonthInNumber: ${lastDayOfCurrentMonthInNumber}`);
     for (let i = lastDayOfCurrentMonthInNumber + 1; i < 7; i++) {
       dates.push(-2);
     }
