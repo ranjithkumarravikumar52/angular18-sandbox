@@ -13,6 +13,7 @@ export class CalendarComponent {
   year: string;
   days: string[];
   dates: number[];
+  today: Date;
 
   private currentDate: Date;
 
@@ -22,6 +23,7 @@ export class CalendarComponent {
     this.year = this.currentDate.getFullYear().toString();
     this.days = this.generateDays();
     this.dates = this.generateDates();
+    this.today = new Date();
   }
 
   previousMonth(): void {
@@ -74,5 +76,13 @@ export class CalendarComponent {
 
     // return output
     return dates;
+  }
+
+  isToday(date: number): boolean {
+    return (
+      date === this.today.getDate() &&
+      this.currentDate.getMonth() === this.today.getMonth() &&
+      this.currentDate.getFullYear() === this.today.getFullYear()
+    );
   }
 }

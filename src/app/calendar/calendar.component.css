@@ -32,3 +32,8 @@
   padding: 10px;
   box-sizing: border-box;
 }
+
+.today {
+  background-color: yellow;
+  font-weight: bold;
+}
