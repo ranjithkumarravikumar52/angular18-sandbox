@@ -1,0 +1,51 @@
+.calendar {
+  width: 1200px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.days {
+  display: flex;
+}
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.days div,
+.dates div {
+  width: 150px;
+  border: 1px solid #ccc;
+  margin: 2px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.today {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.current-month {
+  color: black;
+}
+
+.other-month {
+  color: grey;
+}
+
+.weekend {
+  background-color: lightblue;
+}

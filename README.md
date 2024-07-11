@@ -25,3 +25,38 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+---
+
+## My Roadmap
+
+#### July 8, 2024 - Monday - 04:55 AM
+
+**Calendar component**
+
+feature
+
+- [x] calendar should be dynamic and work for any month/year
+- [x] fill the days of previous month in the current month's view if any
+- [x] fill the days of next month in the current month's view if any
+
+enhancements
+
+- [x] update `generateDays()`, to use type declaration from ts
+- [x] clean up comments in `generateDays()`
+- [x] refactor the `generateDays()`
+
+---
+
+#### July 12, 2024 - Friday - 03:56 AM
+
+**Calendar component**
+
+features
+
+- [x] calendar should have dynamic styling for current day
+- [x] calendar should have dynamic styling for current month vs other months
+- [x] extract the data we generate for dates into an interface (model)
+- [x] calendar should have dynamic styling for weekends
+
+---
