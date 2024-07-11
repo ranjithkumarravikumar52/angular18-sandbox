@@ -60,19 +60,21 @@ export class CalendarComponent {
     const firstDayOfMonth: number = new Date(currentYear, currentMonth, 1).getDay();
     for (let i: number = 0; i < firstDayOfMonth; i++) {
       const prevDate: Date = new Date(currentYear, currentMonth, -i);
-      dates.unshift({ date: prevDate.getDate(), currentMonth: false});
+      dates.unshift({ date: prevDate.getDate(), currentMonth: false, isWeekend: prevDate.getDay() === 0 || prevDate.getDay() === 6 });
     }
 
     // Fill current month's dates
     const daysInMonth: number = new Date(currentYear, currentMonth + 1, 0).getDate();
     for (let i: number = 1; i <= daysInMonth; i++) {
-      dates.push({date: i, currentMonth: true});
+       const date = new Date(currentYear, currentMonth, i);
+       dates.push({ date: i, currentMonth: true, isWeekend: date.getDay() === 0 || date.getDay() === 6 });
     }
 
     // Fill next month's dates
     const remainingDays: number = 42 - dates.length;
     for (let i: number = 1; i <= remainingDays; i++) {
-      dates.push({ date: i, currentMonth: false });
+      const nextDate: Date = new Date(currentYear, currentMonth + 1, i);
+      dates.push({ date: i, currentMonth: false, isWeekend: nextDate.getDay() === 0 || nextDate.getDay() === 6 });
     }
 
     // return output

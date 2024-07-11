@@ -45,3 +45,7 @@
 .other-month {
   color: grey;
 }
+
+.weekend {
+  background-color: lightblue;
+}

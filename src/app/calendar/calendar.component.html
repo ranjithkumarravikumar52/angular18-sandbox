@@ -13,6 +13,7 @@
       [class.today]="isToday(calendarDate.date)"
       [class.current-month]="calendarDate.currentMonth"
       [class.other-month]="!calendarDate.currentMonth"
+      [class.weekend]="calendarDate.isWeekend"
     >
       {{ calendarDate.date }}
     </div>
