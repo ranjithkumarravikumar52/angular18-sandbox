@@ -37,3 +37,11 @@
   background-color: yellow;
   font-weight: bold;
 }
+
+.current-month {
+  color: black;
+}
+
+.other-month {
+  color: grey;
+}

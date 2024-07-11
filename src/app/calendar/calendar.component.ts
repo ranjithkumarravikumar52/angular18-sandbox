@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CalendarDate } from '../models/calendar-date.model';
 
 @Component({
   selector: 'app-calendar',
@@ -12,7 +13,7 @@ export class CalendarComponent {
   month: string;
   year: string;
   days: string[];
-  dates: number[];
+  dates: CalendarDate[];
   today: Date;
 
   private currentDate: Date;
@@ -46,9 +47,9 @@ export class CalendarComponent {
     return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   }
 
-  private generateDates(): number[] {
+  private generateDates(): CalendarDate[] {
     // init empty array
-    const dates: number[] = [];
+    const dates: CalendarDate[] = [];
 
     // initial data
     const currentDate: Date = this.currentDate;
@@ -59,19 +60,19 @@ export class CalendarComponent {
     const firstDayOfMonth: number = new Date(currentYear, currentMonth, 1).getDay();
     for (let i: number = 0; i < firstDayOfMonth; i++) {
       const prevDate: Date = new Date(currentYear, currentMonth, -i);
-      dates.unshift(prevDate.getDate());
+      dates.unshift({ date: prevDate.getDate(), currentMonth: false});
     }
 
     // Fill current month's dates
     const daysInMonth: number = new Date(currentYear, currentMonth + 1, 0).getDate();
     for (let i: number = 1; i <= daysInMonth; i++) {
-      dates.push(i);
+      dates.push({date: i, currentMonth: true});
     }
 
     // Fill next month's dates
     const remainingDays: number = 42 - dates.length;
     for (let i: number = 1; i <= remainingDays; i++) {
-      dates.push(i);
+      dates.push({ date: i, currentMonth: false });
     }
 
     // return output

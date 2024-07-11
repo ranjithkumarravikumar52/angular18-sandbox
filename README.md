@@ -55,9 +55,9 @@ enhancements
 features
 
 - [x] calendar should have dynamic styling for current day
-- [ ] extract the data we generate for dates into an interface (model)
+- [x] calendar should have dynamic styling for current month vs other months
+- [x] extract the data we generate for dates into an interface (model)
 - [ ] calendar should have dynamic styling for weekends
 - [ ] calendar should have dynamic styling for past dates
-- [ ] calendar's should have dynamic styling for current month vs other months
 
 ---

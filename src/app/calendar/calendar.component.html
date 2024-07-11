@@ -8,6 +8,13 @@
     <div *ngFor="let day of days">{{ day }}</div>
   </div>
   <div class="dates">
-    <div *ngFor="let date of dates" [class.today]="isToday(date)">{{ date }}</div>
+    <div
+      *ngFor="let calendarDate of dates"
+      [class.today]="isToday(calendarDate.date)"
+      [class.current-month]="calendarDate.currentMonth"
+      [class.other-month]="!calendarDate.currentMonth"
+    >
+      {{ calendarDate.date }}
+    </div>
   </div>
 </div>
